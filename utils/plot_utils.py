@@ -1,7 +1,7 @@
 import numpy as np
 from matplotlib import pyplot as plt
-from Analysis_HC_NEV.utils.utils import *
-from Analysis_HC_NEV.utils.constants_ieee13nodes import *
+from Utils.utils import *
+from Utils.constants_ieee13nodes import *
 
 
 def save_plot(fig: plt.Figure, name: str, background_color: str = 'white'):
@@ -19,6 +19,11 @@ def save_plot(fig: plt.Figure, name: str, background_color: str = 'white'):
 
 
 def latex_parameters_plot(font_size: int, font_family: str):
+    """
+    This function sets the parameters for the LaTeX style.
+    @param font_size: font size
+    @param font_family: font family
+    """
     plt.rcParams.update({
         "text.usetex": True,  # Use LaTeX
         "font.family": font_family,  # Font family
@@ -28,6 +33,11 @@ def latex_parameters_plot(font_size: int, font_family: str):
 
 
 def normal_parameters_plot(font_size: int, font_family: str):
+    """
+    This function sets the parameters for the normal style.
+    @param font_size: font size
+    @param font_family: font family
+    """
     plt.rcParams.update({
         "text.usetex": False,
         "font.family": font_family,
@@ -36,26 +46,32 @@ def normal_parameters_plot(font_size: int, font_family: str):
 
 
 def latex_bold(text: str):
+    """ This function returns the text in bold. """
     return r"\textbf{" + text + "}"
 
 
 def latex_normal(text: str):
+    """ This function returns the text in normal. """
     return r'' + text
 
 
 def latex_cursive(text: str):
+    """ This function returns the text in cursive. """
     return r"\textif{" + text + "}"
 
 
 def get_text_formatted(text: str, is_bold: bool = False):
+    """ This function returns the text formatted. """
     return None if text is None else latex_bold(text) if is_bold else latex_normal(text)
 
 
 def get_color_by_phase():
+    """ This function returns the colors by phase. """
     return {'a': '#6C8EBF', 'b': '#82B366', 'c': '#B85450', 'n': 'black'}
 
 
 def get_color_list_random():
+    """ This function returns a list of colors. """
     return ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf']
 
 def plot_bar_dict(

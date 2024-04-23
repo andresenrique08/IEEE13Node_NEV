@@ -5,6 +5,8 @@
 .idea
 venv/*
 venv
+__pycache__
+__pycache__/*
 
 # Files
 *.png
